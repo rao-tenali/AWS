@@ -1,5 +1,5 @@
 resource "aws_vpc" "vpc" {
-  cidr_block       = "${Var.AWS_CIDRBLOCK}"
+  cidr_block       = "${var.AWS_CIDRBLOCK}"
   enable_dns_support = "true"
   enable_dns_hostnames = "true"
   enable_classiclink = "false"
