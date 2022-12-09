@@ -1,7 +1,7 @@
 resource "aws_internet_gateway" "igw"{
     vpc_id  =   "${aws_vpc.vpc.id}"
 
-    tags    {
+    tags    =   {
         Name    =   "igw"
     }
 }
@@ -16,7 +16,7 @@ resource "aws_route_table" "prod-public-crt" {
         gateway_id = "${aws_internet_gateway.igw.id}" 
     }
     
-    tags {
+    tags =  {
         Name = "prod-public-crt"
     }
 }
