@@ -13,9 +13,10 @@ resource "aws_vpc" "vpc" {
 
 resource "aws_subnet" "prod-subnet-public-1" {
     vpc_id = "${aws_vpc.vpc.id}"
-    cidr_block = "${element(var.subnet_cidr)}"
+    count = 6
+    cidr_block = "${element(var.subnet_cidr,count.index)}"
     map_public_ip_on_launch = "true"
-    availability_zone = "${element(var.subnet_azs)}"
+    availability_zone = "${element(var.subnet_azs,count.index)}"
 
     tags =  {
         Name = "prod-subnet-public-1"
