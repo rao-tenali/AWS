@@ -13,3 +13,7 @@ variable "subnet_cidr"{
 variable "subnet_azs"{
     default=["us-east-1a","us-east-1b","us-east-1c"]
 }
+
+variable "crt_names"{
+    default=["prod-subnet-public-1","prod-subnet-public-2","prod-subnet-public-3"]
+}
