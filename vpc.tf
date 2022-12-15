@@ -13,7 +13,7 @@ resource "aws_vpc" "vpc" {
 
 resource "aws_subnet" "prod-subnet-public-1" {
     vpc_id = "${aws_vpc.vpc.id}"
-    count = 6
+    count = length(var.subnet_azs)
     cidr_block = "${element(var.subnet_cidr,count.index)}"
     map_public_ip_on_launch = "true"
     availability_zone = "${element(var.subnet_azs,count.index)}"
