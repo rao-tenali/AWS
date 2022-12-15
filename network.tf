@@ -22,7 +22,7 @@ resource "aws_route_table" "prod-public-crt" {
 }
 
 resource "aws_route_table_association" "prod-crta-public-subnet-1"{
-    count = length(var.var.subnet_azs)
+    count = length(var.subnet_azs)
     subnet_id = element(aws_subnet.prod-subnet-public-1.*.id, count.index)
     route_table_id = "${aws_route_table.prod-public-crt.id}"
 }
