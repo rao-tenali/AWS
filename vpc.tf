@@ -18,6 +18,6 @@ resource "aws_subnet" "prod-subnet-public-1" {
     availability_zone = "${element(var.subnet_azs,count.index)}"
 
     tags =  {
-        Name = "prod-subnet-public-1"
+        Name = "${element(var.crt_names,count.index)}"
     }
 }
