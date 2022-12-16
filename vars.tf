@@ -17,3 +17,36 @@ variable "subnet_azs"{
 variable "crt_names"{
     default=["prod-subnet-public-1","prod-subnet-public-2","prod-subnet-public-3"]
 }
+
+variable "sg_ingress_rules" {
+    type = list(object({
+      from_port   = number
+      to_port     = number
+      protocol    = string
+      cidr_block  = string
+      description = string
+    }))
+    default     = [
+        {
+          from_port   = 80
+          to_port     = 80
+          protocol    = "Web"
+          cidr_block  = "0.0.0.0/16"
+          description = "test"
+        },
+        {
+          from_port   = 443
+          to_port     = 443
+          protocol    = "https"
+          cidr_block  = "0.0.0.0/16"
+          description = "test1"
+        },
+        {
+          from_port   = 22
+          to_port     = 22
+          protocol    = "tcp"
+          cidr_block  = "0.0.0.0/16"
+          description = "test2"
+        },
+    ]
+}
