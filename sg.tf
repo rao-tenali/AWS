@@ -33,7 +33,7 @@ resource "aws_security_group" "internet_facing_alb" {
   vpc_id = "${aws_vpc.vpc.id}"
 
   dynamic "ingress" {
-    for_each = toset(locals.ports_in)
+    for_each = toset(local.ports_in)
     content {
       description = "Web Traffic from internet"
       from_port   = ingress.value
@@ -43,7 +43,7 @@ resource "aws_security_group" "internet_facing_alb" {
     }
   }
   dynamic "egress" {
-    for_each = toset(locals.ports_out)
+    for_each = toset(local.ports_out)
     content {
       description = "Web Traffic to internet"
       from_port   = egress.value
