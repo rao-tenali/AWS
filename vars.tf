@@ -30,21 +30,21 @@ variable "sg_ingress_rules" {
         {
           from_port   = 80
           to_port     = 80
-          protocol    = "Web"
+          protocol    = "TCP"
           cidr_block  = "0.0.0.0/16"
           description = "test"
         },
         {
           from_port   = 443
           to_port     = 443
-          protocol    = "https"
+          protocol    = "TCP"
           cidr_block  = "0.0.0.0/16"
           description = "test1"
         },
         {
           from_port   = 22
           to_port     = 22
-          protocol    = "tcp"
+          protocol    = "TCP"
           cidr_block  = "0.0.0.0/16"
           description = "test2"
         },
