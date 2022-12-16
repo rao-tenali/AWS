@@ -1,13 +1,13 @@
-resource "aws_vpc" "vpc" {
-  cidr_block       = "${var.AWS_CIDRBLOCK}"
-  enable_dns_support = "true"
-  enable_dns_hostnames = "true"
-  instance_tenancy = "default"
+# resource "aws_vpc" "vpc" {
+#   cidr_block       = "${var.AWS_CIDRBLOCK}"
+#   enable_dns_support = "true"
+#   enable_dns_hostnames = "true"
+#   instance_tenancy = "default"
 
-  tags = {
-    Name = "vpc"
-  }
-}
+#   tags = {
+#     Name = "vpc"
+#   }
+# }
 
 
 # resource "aws_subnet" "prod-subnet-public-1" {
